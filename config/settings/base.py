@@ -162,7 +162,8 @@ STATICFILES_DIRS = [
     str(CONFIG_DIR / 'static'),
 ]
 
-STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.ManifestStaticFilesStorage'
+# STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.ManifestStaticFilesStorage'
+STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
 
 STATIC_ROOT = str(CONFIG_DIR / 'static')
 STATIC_URL = '/static/'
