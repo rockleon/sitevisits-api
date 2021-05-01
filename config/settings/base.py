@@ -22,26 +22,26 @@ PROJECT_DIR = CONFIG_DIR.parent
 APPS_DIR = PROJECT_DIR / 'sitevisits'
 
 # READ SECRETJSON FILE
-SECRETS_FILE = str(SETTINGS_DIR / 'secrets.json')
-if os.path.exists(SECRETS_FILE) is False:
-    raise ImproperlyConfigured(" Please add 'secrets.json' file in config/ folder.")
+# SECRETS_FILE = str(SETTINGS_DIR / 'secrets.json')
+# if os.path.exists(SECRETS_FILE) is False:
+#     raise ImproperlyConfigured(" Please add 'secrets.json' file in config/ folder.")
 
-with open(SECRETS_FILE) as f:
-    secrets = json.loads(f.read())
+# with open(SECRETS_FILE) as f:
+#     secrets = json.loads(f.read())
 
 
-def get_secret(setting, secrets=secrets):
-    '''get the secret variable value of return exception'''
-    try:
-        return secrets[setting]
-    except KeyError:
-        error_message = 'Set the {0} environment variable'.format(setting)
-        raise ImproperlyConfigured(error_message)
+# def get_secret(setting, secrets=secrets):
+#     '''get the secret variable value of return exception'''
+#     try:
+#         return secrets[setting]
+#     except KeyError:
+#         error_message = 'Set the {0} environment variable'.format(setting)
+#         raise ImproperlyConfigured(error_message)
 
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
-SECRET_KEY = get_secret('SECRET_KEY')
+# SECRET_KEY = get_secret('SECRET_KEY')
 
 # Application definition
 DJANGO_APPS = [
@@ -109,16 +109,16 @@ WSGI_APPLICATION = 'config.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': get_secret('PG_DATABASE_NAME'),
-        'USER': get_secret('PG_DATABASE_USER'),
-        'PASSWORD': get_secret('PG_DATABASE_PASSWORD'),
-        'HOST': get_secret('PG_DATABASE_HOST'),
-        'PORT': get_secret('PG_DATABASE_PORT'),
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': get_secret('PG_DATABASE_NAME'),
+#         'USER': get_secret('PG_DATABASE_USER'),
+#         'PASSWORD': get_secret('PG_DATABASE_PASSWORD'),
+#         'HOST': get_secret('PG_DATABASE_HOST'),
+#         'PORT': get_secret('PG_DATABASE_PORT'),
+#     }
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
