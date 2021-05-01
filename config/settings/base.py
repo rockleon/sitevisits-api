@@ -159,7 +159,7 @@ STATICFILES_FINDERS = [
 ]
 
 STATICFILES_DIRS = [
-    str(APPS_DIR / 'static'),
+    str(CONFIG_DIR / 'static'),
 ]
 
 STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.ManifestStaticFilesStorage'

@@ -1,5 +1,4 @@
-# import sentry_sdk
-# from sentry_sdk.integrations.django import DjangoIntegration
+import django_heroku
 
 from .base import *
 
@@ -11,3 +10,5 @@ try:
     from .local import *
 except ImportError:
     pass
+
+django_heroku.settings(locals())
