@@ -108,16 +108,16 @@ WSGI_APPLICATION = 'config.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': get_secret('PG_DATABASE_NAME'),
-#         'USER': get_secret('PG_DATABASE_USER'),
-#         'PASSWORD': get_secret('PG_DATABASE_PASSWORD'),
-#         'HOST': get_secret('PG_DATABASE_HOST'),
-#         'PORT': get_secret('PG_DATABASE_PORT'),
-#     }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        # 'NAME': get_secret('PG_DATABASE_NAME'),
+        # 'USER': get_secret('PG_DATABASE_USER'),
+        # 'PASSWORD': get_secret('PG_DATABASE_PASSWORD'),
+        # 'HOST': get_secret('PG_DATABASE_HOST'),
+        # 'PORT': get_secret('PG_DATABASE_PORT'),
+    }
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
