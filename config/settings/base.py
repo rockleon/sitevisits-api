@@ -213,6 +213,4 @@ API_VERSION = 'v1'
 
 AUTH_USER_MODEL = 'access.User'
 
-ALLOWED_HOSTS = ['*']
-
 SITE_ID = 3
