@@ -18,6 +18,7 @@ SETTINGS_DIR = Path(__file__).resolve().parent
 CONFIG_DIR = SETTINGS_DIR.parent
 PROJECT_DIR = CONFIG_DIR.parent
 APPS_DIR = PROJECT_DIR / 'sitevisits'
+BASE_DIR = APPS_DIR
 
 # READ SECRETJSON FILE
 # SECRETS_FILE = str(SETTINGS_DIR / 'secrets.json')
