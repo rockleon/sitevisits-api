@@ -21,4 +21,4 @@ class Account(UUIDTimeStamp):
         ordering = ('visits', 'title')
     
     def __str__(self):
-        return title
+        return self.title

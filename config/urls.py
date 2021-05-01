@@ -21,7 +21,7 @@ urlpatterns = [
 
     url('rest-auth/', include('rest_auth.urls')),
     path('admin/', admin.site.urls),
-    # path('', include('zayadesk.issue.urls')),
+    path('', include('sitevisits.account.urls')),
     # path('password-reset/<uidb64>/<token>/', empty_view, name='password_reset_confirm'),
 
 ]
