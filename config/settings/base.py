@@ -40,6 +40,7 @@ APPS_DIR = PROJECT_DIR / 'sitevisits'
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 # SECRET_KEY = get_secret('SECRET_KEY')
+SECRET_KEY = "o&t9*wdcbj(^@=_hr@+n!+xdahv39@m##-hx!*iptw*=ij)-6@"
 
 # Application definition
 DJANGO_APPS = [
