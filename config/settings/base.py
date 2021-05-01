@@ -159,13 +159,13 @@ STATICFILES_FINDERS = [
 ]
 
 STATICFILES_DIRS = [
-    str(CONFIG_DIR / 'static'),
+    str(APPS_DIR / 'static'),
 ]
 
-# STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.ManifestStaticFilesStorage'
-STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
+STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.ManifestStaticFilesStorage'
+# STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
 
-STATIC_ROOT = str(CONFIG_DIR / 'static')
+STATIC_ROOT = str(APPS_DIR / 'static')
 STATIC_URL = '/static/'
 
 MEDIA_ROOT = str(APPS_DIR / 'media')
