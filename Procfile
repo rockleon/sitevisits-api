@@ -1,1 +1,1 @@
-web: gunicorn sitevisits.wsgi
+web: gunicorn config.wsgi
