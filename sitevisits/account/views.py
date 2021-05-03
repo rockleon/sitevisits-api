@@ -9,11 +9,16 @@ class AccountViewSet(ModelViewSet):
     serializer_class = AccountSerializers
 
 
-@api_view(['POST'])
+@api_view(['GET', 'POST'])
 def IncrementVisits(request, key):
-    if request.method == 'POST':
+    try:
         acc = Account.objects.get(key = key)
+    except:
+        return Response({"error": "Invalid key!"}, status=400)
+    if request.method == 'GET':
+        return Response({ "title": acc.title }, status=200)
+    if request.method == 'POST':
         acc.visits += 1
         acc.save()
-        return Response({ "title": acc.title, "key": key, "visits": acc.visits})
-    return Response({"error": "Something went wrong"})
+        return Response({ "title": acc.title }, status=200)
+    return Response({"error": "Something went wrong!"}, status=400)
