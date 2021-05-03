@@ -1,4 +1,9 @@
 from django.contrib import admin
 from .models import Account
 
-admin.site.register(Account)
+class AdminAccount(admin.ModelAdmin):
+    model = Account
+    list_display = ('title', 'key', 'url')
+
+
+admin.site.register(Account, AdminAccount)
