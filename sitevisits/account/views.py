@@ -1,12 +1,19 @@
 from rest_framework.viewsets import ModelViewSet, ViewSet
-from .serializers import AccountSerializers
+from rest_framework.permissions import IsAuthenticated
+from .serializers import AccountSerializer
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from .models import Account
 
 class AccountViewSet(ModelViewSet):
-    queryset = Account.objects.all()
-    serializer_class = AccountSerializers
+    serializer_class = AccountSerializer
+    permission_classes = [IsAuthenticated]
+
+    def get_queryset(self):
+        if self.request.user.is_superuser:
+            return Account.objects.all()
+        else:
+            return Account.objects.filter(author=self.request.user)
 
 
 @api_view(['GET', 'POST'])
