@@ -1,13 +1,18 @@
-import sentry_sdk
-from sentry_sdk.integrations.django import DjangoIntegration
+import django_heroku
 
 from .base import *
 
-ALLOWED_HOSTS = ['*']
+# SECURITY WARNING: don't run with debug turned on in production!
+DEBUG = True
 
-DEBUG = False
+SITE_ID = 1
+
+# SECURITY WARNING: define the correct hosts in production!
+ALLOWED_HOSTS = ['*']
 
 try:
     from .local import *
 except ImportError:
     pass
+
+django_heroku.settings(locals())
