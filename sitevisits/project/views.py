@@ -1,25 +1,25 @@
 from rest_framework.viewsets import ModelViewSet, ViewSet
 from rest_framework.permissions import IsAuthenticated
-from .serializers import AccountSerializer
+from .serializers import ProjectSerializer
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
-from .models import Account
+from .models import Project
 
-class AccountViewSet(ModelViewSet):
-    serializer_class = AccountSerializer
+class ProjectViewSet(ModelViewSet):
+    serializer_class = ProjectSerializer
     permission_classes = [IsAuthenticated]
 
     def get_queryset(self):
         if self.request.user.is_superuser:
-            return Account.objects.all()
+            return Project.objects.all()
         else:
-            return Account.objects.filter(author=self.request.user)
+            return Project.objects.filter(author=self.request.user)
 
 
 @api_view(['GET', 'POST'])
 def IncrementVisits(request, key):
     try:
-        acc = Account.objects.get(key = key)
+        acc = Project.objects.get(key = key)
     except:
         return Response({"error": "Invalid key!"}, status=400)
     if request.method == 'GET':
