@@ -68,7 +68,7 @@ THIRD_PARTY_APPS = [
 LOCAL_APPS = [
     'sitevisits.common',
     'sitevisits.access',
-    'sitevisits.account',
+    'sitevisits.project',
 ]
 
 INSTALLED_APPS = DJANGO_APPS  + THIRD_PARTY_APPS + LOCAL_APPS
@@ -213,4 +213,4 @@ API_VERSION = 'v1'
 
 AUTH_USER_MODEL = 'access.User'
 
-# SITE_ID = 3
+SITE_ID = 4

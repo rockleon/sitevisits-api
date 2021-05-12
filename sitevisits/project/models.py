@@ -3,20 +3,20 @@ from sitevisits.common.models import UUIDTimeStamp
 from sitevisits.access.models import User
 import uuid
 
-class Account(UUIDTimeStamp):
+class Project(UUIDTimeStamp):
     key = models.UUIDField(default=uuid.uuid4, editable=False)
     title = models.CharField(max_length=100)
     description = models.CharField(max_length=500, blank=True, null=True)
     url = models.CharField(max_length=100, blank=True, null=True)
     visits = models.IntegerField(default=0)
     author = models.ForeignKey(User,
-                               related_name='accounts',
+                               related_name='projects',
                                on_delete=models.CASCADE)
     
     class Meta:
         constraints = [
             models.UniqueConstraint(fields=['author', 'title'],
-                                    name='unique together constraint')
+                                    name='unique together')
         ]
         ordering = ('visits', 'title')
     
